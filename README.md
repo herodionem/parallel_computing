@@ -39,5 +39,45 @@ Multiple Instruction, Multiple Data (MIMD):
                 * COMA removes duplicates and keeps only cache memories
 
     * Distributed: 'i' is a local address
+        * "Multi-computer"
         * Concurrency between processors' memory stores managed via messaging
         * see `./distributed_memory_architecture.png`
+        * Pros:
+            * No conflicts at communication bus or switch
+            * No limit to number of processors
+            * No cache coherency issues (since each processor is in charge of it's own data store)
+        * Cons:
+            * Communication between processors requires message protocol, which
+                * takes time
+                * interrupts processor getting request message to deal with request
+                * responsible for subdivision of data in local memories to optimize performance (huge logistical problem)
+
+Massive Parallel Processing (MPP):
+* Clusters
+    * fail-over
+    * load balancing
+    * high-performance computing
+* Shared memory model
+* Miltithread model
+* Distributed memory model
+* Message passing model
+* Parallel model
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Parallel Design:
+* Task decomposition
+    * Domain decomposition -> segments of data
+    * Functional decomposition -> broken down into tasks
+* Task assignment
+    * task distribution
+    * workload distribution
+    * maximizing idempotence (limiting communication between tasks/processes)
+* Agglomeration
+    * combine smaller tasks with larger ones
+    * limiting communication (comm costs - fixed and variable)
+    * if tasks are too small, fixed costs could overwhelm available resources
+* Mapping
+    * specify optimum location for execution
+    * <minimize execution time>
+    * Balancing need for tasks to communicate (locality) with the ability of tasks/processes to be run concurrently
