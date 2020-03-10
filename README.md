@@ -7,10 +7,10 @@ Single Instruction, Multiple Data (SIMD):
 Multiple Instruction, Multiple Data (MIMD):
 * Usually operate asynchronously
 * 'n' controllers, 'n' processors, Shared memory network and data streams
-* see `./mimd_memory_architecture.png`
+* see `static/mimd_memory_architecture.png`
 * Shared vs Distributed memory
     * Shared: memory index 'i' is the same for each processor
-        * see `./shared_memory_architecture.png`
+        * see `static/shared_memory_architecture.png`
         * Memory management:
             * Memory consistency between processors' managed by updating processors' cache
                 * "Cache Coherency"
@@ -41,7 +41,7 @@ Multiple Instruction, Multiple Data (MIMD):
     * Distributed: 'i' is a local address
         * "Multi-computer"
         * Concurrency between processors' memory stores managed via messaging
-        * see `./distributed_memory_architecture.png`
+        * see `static/distributed_memory_architecture.png`
         * Pros:
             * No conflicts at communication bus or switch
             * No limit to number of processors
