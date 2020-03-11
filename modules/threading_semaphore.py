@@ -1,3 +1,8 @@
+"""
+https://stackoverflow.com/questions/21736741/what-are-the-practical-uses-of-semaphores
+
+"""
+
 import threading
 import time
 import random
@@ -5,6 +10,7 @@ import random
 
 semaphore = threading.Semaphore(0)
 
+class test(threading.Thread): ...
 
 def consumer():
     print("consumer is waiting.")
@@ -23,10 +29,12 @@ def producer():
 
 
 if __name__ == '__main__':
-    t1 = threading.Thread(target=consumer)
-    t2 = threading.Thread(target=producer)
-    t1.start()
+    t1 = test(target=consumer)
+    t2 = test(target=producer)
+    # t1 = threading.Thread(target=consumer)
+    # t2 = threading.Thread(target=producer)
     t2.start()
+    t1.start()
     t1.join()
     t2.join()
     print("master process terminating")
