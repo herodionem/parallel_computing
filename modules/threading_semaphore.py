@@ -10,9 +10,12 @@ import random
 
 semaphore = threading.Semaphore(0)
 
+item = None
+
 class test(threading.Thread): ...
 
 def consumer():
+    global item
     print("consumer is waiting.")
     semaphore.acquire()
     print(f"[Consumer]: consumed item number {item}")
